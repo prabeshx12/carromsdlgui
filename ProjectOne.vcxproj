@@ -26,6 +26,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="music.cpp" />
+    <ClCompile Include="OverLANModes.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +36,7 @@
     <ClInclude Include="headers\MainFrame.h" />
     <ClInclude Include="headers\MainMenu.h" />
     <ClInclude Include="headers\music.h" />
+    <ClInclude Include="headers\OverLANModes.h" />
     <ClInclude Include="headers\TextureManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

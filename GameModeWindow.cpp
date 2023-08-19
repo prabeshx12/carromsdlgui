@@ -3,10 +3,12 @@
 #include "headers/TextureManager.h"
 #include "headers/MainMenu.h"
 #include "headers/music.h"
+#include "headers/OverLANModes.h"
 
 extern Initialization* MainWindow;
 extern MainMenu MenuWindow;
 extern Music* ClickSound;
+extern OverLANModes LANModeWindow;
 
 void NewGameModes::render_singleplayer_button() {
 
@@ -110,6 +112,12 @@ void NewGameModes::handleNewGameModeEvents(SDL_Event e) {
                 else if (x >= 745 + offsetX && x <= (995 + offsetX) && y >= 450 + offsetY && y <= (450 + BUT_HEIGHT + offsetY)) {
                     render_overlan_button();
                     ClickSound->PlayClickMusic();
+                    currState = OVERLANMODES;
+                    SDL_RenderClear(MainWindow->renderer);
+                    MenuWindow.carrom_menu_background();
+                    LANModeWindow.reset_overlanmodes_button_state();
+                    LANModeWindow.render_overlanmodes_buttons();
+
                 }
 
                 else if (x >= 770 + offsetX && x <= 970 + offsetX && y >= 575 + offsetY && 575 + BUT_HEIGHT + offsetY) {

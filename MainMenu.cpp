@@ -129,7 +129,7 @@ void MainMenu::handleMainMenuEvents(SDL_Event e) {
                 if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 200 + offsetY && y <= (200 + BUT_HEIGHT + offsetY)) {
                     render_new_game_button();
                     ClickSound->PlayClickMusic();
-                    currState = NEWGAME;
+                    currState = NEWGAMEMODES;
                     SDL_RenderClear(MainWindow->renderer);
                     carrom_menu_background();
                     ModeWindow.reset_mode_buttons_states();

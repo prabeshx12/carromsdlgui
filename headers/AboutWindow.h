@@ -1,10 +1,12 @@
 #pragma once
 #include<SDL.h>
 #include<SDL_image.h>
-#include "headers/MainMenu.h"
+#include "MainMenu.h"
+#include "OverLANModes.h"
 
 
 class AboutSection {
+
 	private:
 		bool close_button_state = true;
 		SDL_Surface* about_win_surface, * close_surface, * message_surface;

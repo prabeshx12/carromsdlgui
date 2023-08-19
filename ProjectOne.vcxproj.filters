@@ -39,6 +39,9 @@
     <ClCompile Include="music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OverLANModes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\AboutWindow.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\music.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\OverLANModes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

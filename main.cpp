@@ -5,6 +5,7 @@
 #include "headers/GameModeWindow.h"
 #include "headers/AboutWindow.h"
 #include "headers/music.h"
+#include "headers/OverLANModes.h"
 
 Initialization* MainWindow = nullptr;
 MainMenu MenuWindow;
@@ -12,6 +13,7 @@ NewGameModes ModeWindow;
 AboutSection AboutWindow;
 Music* BackMusic;
 Music* ClickSound;
+OverLANModes LANModeWindow;
 
 const int WIN_WIDTH = 1180, WIN_HEIGHT = 950;
 windowStates currState;
@@ -42,7 +44,7 @@ int main(int argc, char* argv[]) {
 					MenuWindow.handleMainMenuEvents(event);
 					break;
 
-				case NEWGAME:
+				case NEWGAMEMODES:
 					ModeWindow.handleNewGameModeEvents(event);
 					break;
 
@@ -59,7 +61,8 @@ int main(int argc, char* argv[]) {
 				case MULTIPLAYER:
 					break;
 
-				case OVERLAN:
+				case OVERLANMODES:
+					LANModeWindow.handleOverLANModesEvents(event);
 					break;
 
 				default:

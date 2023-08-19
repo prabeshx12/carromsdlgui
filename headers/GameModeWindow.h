@@ -1,7 +1,7 @@
 #pragma once
 #include<SDL.h>
 #include<SDL_image.h>
-#include "headers/MainMenu.h"
+#include "MainMenu.h"
 
 class NewGameModes {
 

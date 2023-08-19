@@ -5,12 +5,13 @@
 
 enum windowStates {
 	MAINMENU,
-	NEWGAME,
+	NEWGAMEMODES,
 	LEADERBOARD,
 	ABOUT,
 	SINGLEPLAYER,
 	MULTIPLAYER,
-	OVERLAN
+	OVERLANMODES
+
 };
 
 extern windowStates currState;
