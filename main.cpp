@@ -27,8 +27,8 @@ int main(int argc, char* argv[]) {
 	MainWindow->windowInit("CarromKing", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIN_WIDTH, WIN_HEIGHT, false);
 	MenuWindow.render_developer_window();
 	MenuWindow.render_game_logo_window();
+	BackMusic->PlayBackgroundMusic(-1);
 	MenuWindow.main_menu_window();
-	BackMusic->PlayMusic(-1);
 
 	SDL_Event event;
 

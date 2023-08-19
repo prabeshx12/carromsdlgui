@@ -6,23 +6,23 @@
 class Music {
 	private:
 		Mix_Music* backgroundmusic;
+		Mix_Music* selectionmusic;
+		const char* musicfilepath;
 
 	public:
-		Music(const char* musicfilepath) {
-			if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) == -1) {
-				std::cout << "Audio Library not working!!" << Mix_GetError() << std::endl;
-			}
-			backgroundmusic = Mix_LoadMUS(musicfilepath);
-		}
+		Music(const char* musicpath) { musicfilepath = musicpath; }
 
 		~Music() {
 			Mix_FreeMusic(backgroundmusic);
+			Mix_FreeMusic(selectionmusic);
 		}
 
-		void PlayMusic(int num);
+		void PlayBackgroundMusic(int num);
 
 		void PauseBackgroundMusic();
 
 		void SetBackgroundVolume(int volume);
+
+		void PlayClickMusic(int num);
 
 };
