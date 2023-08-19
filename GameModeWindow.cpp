@@ -99,22 +99,22 @@ void NewGameModes::handleNewGameModeEvents(SDL_Event e) {
 
                 if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 200 + offsetY && y <= (200 + BUT_HEIGHT + offsetY)) {
                     render_singleplayer_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                 }
 
                 else if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 325 + offsetY && y <= (325 + BUT_HEIGHT + offsetY)) {
                     render_multiplayer_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                 }
 
                 else if (x >= 745 + offsetX && x <= (995 + offsetX) && y >= 450 + offsetY && y <= (450 + BUT_HEIGHT + offsetY)) {
                     render_overlan_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                 }
 
                 else if (x >= 770 + offsetX && x <= 970 + offsetX && y >= 575 + offsetY && 575 + BUT_HEIGHT + offsetY) {
                     render_back_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                     currState = MAINMENU;
                     SDL_RenderClear(MainWindow->renderer);
                     MenuWindow.reset_button_states();

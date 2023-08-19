@@ -128,7 +128,7 @@ void MainMenu::handleMainMenuEvents(SDL_Event e) {
 
                 if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 200 + offsetY && y <= (200 + BUT_HEIGHT + offsetY)) {
                     render_new_game_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                     currState = NEWGAME;
                     SDL_RenderClear(MainWindow->renderer);
                     carrom_menu_background();
@@ -139,12 +139,12 @@ void MainMenu::handleMainMenuEvents(SDL_Event e) {
 
                 else if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 325 + offsetY && y <= (325 + BUT_HEIGHT + offsetY)) {
                     render_leaderboard_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                 }
 
                 else if (x >= 770 + offsetX && x <= (770 + 200 + offsetX) && y >= 450 + offsetY && y <= (450 + BUT_HEIGHT + offsetY)) {
                     render_about_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                     currState = ABOUT;
                     SDL_RenderClear(MainWindow->renderer);
                     AboutWindow.render_about_window();
@@ -154,7 +154,7 @@ void MainMenu::handleMainMenuEvents(SDL_Event e) {
 
                 else if (x >= 770 + offsetX && x <= (770 + 200 + offsetX) && y >= 575 + offsetY && y <= (575 + BUT_HEIGHT + offsetY)) {
                     render_exit_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                     MainWindow->is_running = false;
                 }
             }

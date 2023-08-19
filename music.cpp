@@ -26,16 +26,16 @@ void Music::SetBackgroundVolume(int volume) {
 
 }
 
-void Music::PlayClickMusic(int num) {
+void Music::PlayClickMusic() {
 
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) == -1) {
 		std::cout << "Audio Library not working!!" << Mix_GetError() << std::endl;
 	}
 
-	selectionmusic = Mix_LoadMUS(musicfilepath);
+	selectionmusic = Mix_LoadWAV(musicfilepath);
 
 	if (selectionmusic != nullptr) {
-		Mix_PlayMusic(selectionmusic, num);
+		Mix_PlayChannel(-1, selectionmusic, 0);
 	}
 
 }

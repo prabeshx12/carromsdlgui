@@ -47,7 +47,7 @@ void AboutSection::handleAboutWindowEvents(SDL_Event e) {
                 if (x >= 440 + offsetX && x <= 640 + offsetX && y >= 540 + offsetY && y <= 680 + BUT_HEIGHT + offsetY) {
 
                     render_close_button();
-                    ClickSound->PlayClickMusic(1);
+                    ClickSound->PlayClickMusic();
                     SDL_RenderClear(MainWindow->renderer);
                     currState = MAINMENU;
                     MenuWindow.reset_button_states();

@@ -6,7 +6,7 @@
 class Music {
 	private:
 		Mix_Music* backgroundmusic;
-		Mix_Music* selectionmusic;
+		Mix_Chunk* selectionmusic;
 		const char* musicfilepath;
 
 	public:
@@ -14,7 +14,7 @@ class Music {
 
 		~Music() {
 			Mix_FreeMusic(backgroundmusic);
-			Mix_FreeMusic(selectionmusic);
+			Mix_FreeChunk(selectionmusic);
 		}
 
 		void PlayBackgroundMusic(int num);
@@ -23,6 +23,6 @@ class Music {
 
 		void SetBackgroundVolume(int volume);
 
-		void PlayClickMusic(int num);
+		void PlayClickMusic();
 
 };

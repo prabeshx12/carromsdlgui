@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 
 	MainWindow = new Initialization();
 	BackMusic = new Music("music/background_one.mp3");
-	ClickSound = new Music("music/selection_music.mp3");
+	ClickSound = new Music("music/selection_music.wav");
 
 	MainWindow->windowInit("CarromKing", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIN_WIDTH, WIN_HEIGHT, false);
 	MenuWindow.render_developer_window();
