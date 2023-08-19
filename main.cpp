@@ -4,13 +4,16 @@
 #include "headers/MainMenu.h"
 #include "headers/GameModeWindow.h"
 #include "headers/AboutWindow.h"
+#include "headers/music.h"
 
 Initialization* MainWindow = nullptr;
 MainMenu MenuWindow;
 NewGameModes ModeWindow;
 AboutSection AboutWindow;
+Music* BackMusic;
+Music* ClickSound;
 
-const int WIN_WIDTH = 1080, WIN_HEIGHT = 800;
+const int WIN_WIDTH = 1180, WIN_HEIGHT = 950;
 windowStates currState;
 
 int main(int argc, char* argv[]) {
@@ -18,11 +21,14 @@ int main(int argc, char* argv[]) {
 	currState = MAINMENU;
 
 	MainWindow = new Initialization();
+	BackMusic = new Music("music/background_one.mp3");
+	ClickSound = new Music("music/selection_music.mp3");
 
 	MainWindow->windowInit("CarromKing", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIN_WIDTH, WIN_HEIGHT, false);
 	MenuWindow.render_developer_window();
 	MenuWindow.render_game_logo_window();
 	MenuWindow.main_menu_window();
+	BackMusic->PlayMusic(-1);
 
 	SDL_Event event;
 

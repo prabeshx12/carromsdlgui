@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include<SDL_image.h>
+#include<SDL_ttf.h>
 
 enum windowStates {
 	MAINMENU,
@@ -24,6 +25,8 @@ class Initialization {
 
 		SDL_Window* window;
 		SDL_Renderer* renderer;
+		TTF_Font* fontType;
+
 		bool is_running = true;
 
 		Initialization() {}

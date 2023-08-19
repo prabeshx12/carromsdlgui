@@ -2,9 +2,11 @@
 #include "headers/MainFrame.h"
 #include "headers/TextureManager.h"
 #include "headers/MainMenu.h"
+#include "headers/music.h"
 
 extern Initialization* MainWindow;
 extern MainMenu MenuWindow;
+extern Music* ClickSound;
 
 void NewGameModes::render_singleplayer_button() {
 
@@ -95,20 +97,24 @@ void NewGameModes::handleNewGameModeEvents(SDL_Event e) {
             SDL_GetMouseState(&x, &y);
             if (SDL_BUTTON_LEFT == e.button.button) {
 
-                if (x >= 720 && x <= (720 + BUT_WIDTH) && y >= 200 && y <= (200 + BUT_HEIGHT)) {
+                if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 200 + offsetY && y <= (200 + BUT_HEIGHT + offsetY)) {
                     render_singleplayer_button();
+                    ClickSound->PlayMusic(1);
                 }
 
-                else if (x >= 720 && x <= (720 + BUT_WIDTH) && y >= 325 && y <= (325 + BUT_HEIGHT)) {
+                else if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 325 + offsetY && y <= (325 + BUT_HEIGHT + offsetY)) {
                     render_multiplayer_button();
+                    ClickSound->PlayMusic(1);
                 }
 
-                else if (x >= 745 && x <= (995) && y >= 450 && y <= (450 + BUT_HEIGHT)) {
+                else if (x >= 745 + offsetX && x <= (995 + offsetX) && y >= 450 + offsetY && y <= (450 + BUT_HEIGHT + offsetY)) {
                     render_overlan_button();
+                    ClickSound->PlayMusic(1);
                 }
 
-                else if (x >= 770 && x <= 970 && y >= 575 && 575 + BUT_HEIGHT) {
+                else if (x >= 770 + offsetX && x <= 970 + offsetX && y >= 575 + offsetY && 575 + BUT_HEIGHT + offsetY) {
                     render_back_button();
+                    ClickSound->PlayMusic(1);
                     currState = MAINMENU;
                     SDL_RenderClear(MainWindow->renderer);
                     MenuWindow.reset_button_states();

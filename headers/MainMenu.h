@@ -12,14 +12,16 @@ class MainMenu {
         bool leaderboard_button_state = true;
         bool about_button_state = true;
         bool exit_button_state = true;
+        int offsetX = 100;
+        int offsetY = 100;
 
 		SDL_Surface* developer_surface, * game_logo_surface, * background_surface, * new_game_surface, * leaderboard_surface, * about_surface, * exit_surface;
 		SDL_Texture* developer_texture, * game_logo_texture, * background_texture, * new_game_texture, * leaderboard_texture, * about_texture, * exit_texture;
 
 	public:
 
-        SDL_Rect r1{ 720, 200, BUT_WIDTH, BUT_HEIGHT }, r2{ 720, 325, BUT_WIDTH, BUT_HEIGHT };
-        SDL_Rect r3{ 770, 450, 200, BUT_HEIGHT }, r4{ 770, 575, 200, BUT_HEIGHT };
+        SDL_Rect r1{ 720+offsetX, 200 + offsetY, BUT_WIDTH, BUT_HEIGHT }, r2{ 720 + offsetX, 325 + offsetY, BUT_WIDTH, BUT_HEIGHT };
+        SDL_Rect r3{ 770 + offsetX, 450 + offsetY, 200, BUT_HEIGHT }, r4{ 770 + offsetX, 575 + offsetY, 200, BUT_HEIGHT };
 
         void render_developer_window();
 

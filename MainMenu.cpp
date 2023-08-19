@@ -3,10 +3,12 @@
 #include "headers/GameModeWindow.h"
 #include "headers/TextureManager.h"
 #include "headers/AboutWindow.h"
+#include "headers/music.h"
 
 extern Initialization* MainWindow;
 extern NewGameModes ModeWindow;
 extern AboutSection AboutWindow;
+extern Music* ClickSound;
 
 
 void MainMenu::render_developer_window() {
@@ -124,8 +126,9 @@ void MainMenu::handleMainMenuEvents(SDL_Event e) {
 
             if (SDL_BUTTON_LEFT == e.button.button) {
 
-                if (x >= 720 && x <= (720 + BUT_WIDTH) && y >= 200 && y <= (200 + BUT_HEIGHT)) {
+                if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 200 + offsetY && y <= (200 + BUT_HEIGHT + offsetY)) {
                     render_new_game_button();
+                    ClickSound->PlayMusic(1);
                     currState = NEWGAME;
                     SDL_RenderClear(MainWindow->renderer);
                     carrom_menu_background();
@@ -134,20 +137,24 @@ void MainMenu::handleMainMenuEvents(SDL_Event e) {
 
                 }
 
-                else if (x >= 720 && x <= (720 + BUT_WIDTH) && y >= 325 && y <= (325 + BUT_HEIGHT)) {
+                else if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 325 + offsetY && y <= (325 + BUT_HEIGHT + offsetY)) {
                     render_leaderboard_button();
+                    ClickSound->PlayMusic(1);
                 }
 
-                else if (x >= 770 && x <= (770 + 200) && y >= 450 && y <= (450 + BUT_HEIGHT)) {
+                else if (x >= 770 + offsetX && x <= (770 + 200 + offsetX) && y >= 450 + offsetY && y <= (450 + BUT_HEIGHT + offsetY)) {
                     render_about_button();
+                    ClickSound->PlayMusic(1);
                     currState = ABOUT;
                     SDL_RenderClear(MainWindow->renderer);
                     AboutWindow.render_about_window();
+                    AboutWindow.render_message();
                     AboutWindow.render_close_button();
                 }
 
-                else if (x >= 770 && x <= (770 + 200) && y >= 575 && y <= (575 + BUT_HEIGHT)) {
+                else if (x >= 770 + offsetX && x <= (770 + 200 + offsetX) && y >= 575 + offsetY && y <= (575 + BUT_HEIGHT + offsetY)) {
                     render_exit_button();
+                    ClickSound->PlayMusic(1);
                     MainWindow->is_running = false;
                 }
             }

@@ -21,7 +21,19 @@ void Initialization::windowInit(const char* title, int x_pos, int y_pos, int p_w
 		if (renderer) {
 			std::cout << "Renderer created!!" << std::endl;
 		}
+
+		if (TTF_Init() == -1) {
+			std::cout << "Could not initialize the TTF!! Error: " << TTF_GetError() << std::endl;
+		}
+
+		fontType = TTF_OpenFont("fonts/Roboto-Black.ttf", 12);
+
+		if (fontType != nullptr) {
+			std::cout << "Font is initialized!!" << std::endl;
+		}
+
 		is_running = true;
+
 	}
 	else {
 		is_running = false;
@@ -45,6 +57,7 @@ void Initialization::clean() {
 
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
+	TTF_CloseFont(fontType);
 	SDL_Quit();
 
 }

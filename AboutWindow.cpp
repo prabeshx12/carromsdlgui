@@ -2,14 +2,23 @@
 #include "headers/TextureManager.h"
 #include "headers/MainFrame.h"
 #include "headers/MainMenu.h"
+#include "headers/fonts.h"
+#include "headers/music.h"
 
 extern Initialization* MainWindow;
 extern MainMenu MenuWindow;
+extern Music* ClickSound;
 
 void AboutSection::render_about_window() {
 	
 	about_win_surface = IMG_Load("assets/background.png");
 	TextureManager::LTexture(MainWindow->renderer, about_win_surface, about_win_texture, NULL, NULL);
+
+}
+
+void AboutSection::render_message() {
+
+    FontManager::LFont(MainWindow->renderer, message_surface, message_texture, MainWindow->fontType, "Carrom King v 0.1.1", { 255, 255, 255 }, &r5);
 
 }
 
@@ -35,8 +44,10 @@ void AboutSection::handleAboutWindowEvents(SDL_Event e) {
             int x, y;
             SDL_GetMouseState(&x, &y);
             if (SDL_BUTTON_LEFT == e.button.button) {
-                if (x >= 440 && x <= 640 && y >= 540 && y <= 680 + BUT_HEIGHT) {
+                if (x >= 440 + offsetX && x <= 640 + offsetX && y >= 540 + offsetY && y <= 680 + BUT_HEIGHT + offsetY) {
+
                     render_close_button();
+                    ClickSound->PlayMusic(1);
                     SDL_RenderClear(MainWindow->renderer);
                     currState = MAINMENU;
                     MenuWindow.reset_button_states();

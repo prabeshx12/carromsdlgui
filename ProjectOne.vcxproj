@@ -20,17 +20,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AboutWindow.cpp" />
+    <ClCompile Include="fonts.cpp" />
     <ClCompile Include="GameModeWindow.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="music.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\AboutWindow.h" />
+    <ClInclude Include="headers\fonts.h" />
     <ClInclude Include="headers\GameModeWindow.h" />
     <ClInclude Include="headers\MainFrame.h" />
     <ClInclude Include="headers\MainMenu.h" />
+    <ClInclude Include="headers\music.h" />
     <ClInclude Include="headers\TextureManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

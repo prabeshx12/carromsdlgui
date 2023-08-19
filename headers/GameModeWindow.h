@@ -11,14 +11,16 @@ class NewGameModes {
         bool multiplayer_button_state = true;
         bool over_LAN_button_state = true;
         bool back_button_state = true;
+        int offsetX = 100;
+        int offsetY = 100;
 
         SDL_Texture* single_player_texture, * multiplayer_texture, * over_LAN_texture, * back_texture;
         SDL_Surface* single_player_surface, * multiplayer_surface, * over_LAN_surface, * back_surface;
 
     public:
 
-        SDL_Rect r1{ 720, 200, BUT_WIDTH, BUT_HEIGHT }, r2{ 720, 325, BUT_WIDTH, BUT_HEIGHT };
-        SDL_Rect r4{ 770, 575, 200, BUT_HEIGHT }, r7{ 745, 450, 250, BUT_HEIGHT };
+        SDL_Rect r1{ 720 + offsetX, 200 + offsetY, BUT_WIDTH, BUT_HEIGHT }, r2{ 720 + offsetX, 325 + offsetY, BUT_WIDTH, BUT_HEIGHT };
+        SDL_Rect r4{ 770 + offsetX, 575 + offsetY, 200, BUT_HEIGHT }, r7{ 745 + offsetX, 450 + offsetY, 250, BUT_HEIGHT };
 
         void render_singleplayer_button();
         
