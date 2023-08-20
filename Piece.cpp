@@ -42,22 +42,6 @@ void CarromPiece::setVelocity(Vector<T> velocity) {
 
 }
 
-Striker::Striker(SDL_Renderer* renderer, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity();
-
-}
-
-Striker::Striker(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity(strikerVelocity);
-
-}
-
 void Striker::initialize(SDL_Renderer* renderer) {
 
     imageSurface = IMG_Load("objects/striker.png");
@@ -68,22 +52,6 @@ void Striker::initialize(SDL_Renderer* renderer) {
     positionRect.y = 20;                        
     positionRect.w = STRIKER_PIECE_SIZE;        
     positionRect.h = STRIKER_PIECE_SIZE;
-
-}
-
-Queen::Queen(SDL_Renderer* renderer, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity();
-
-}
-
-Queen::Queen(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity(strikerVelocity);
 
 }
 
@@ -100,22 +68,6 @@ void Queen::initialize(SDL_Renderer* renderer) {
 
 }
 
-White::White(SDL_Renderer* renderer, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity();
-
-}
-
-White::White(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity(strikerVelocity);
-
-}
-
 void White::initialize(SDL_Renderer* renderer) {
 
     imageSurface = IMG_Load("objects/white.png");
@@ -126,22 +78,6 @@ void White::initialize(SDL_Renderer* renderer) {
     positionRect.y = WIN_HEIGHT / 2 - 45 / 2; 
     positionRect.w = CARROM_PIECE_SIZE;          
     positionRect.h = CARROM_PIECE_SIZE;
-
-}
-
-Black::Black(SDL_Renderer* renderer, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity();
-
-}
-
-Black::Black(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
-
-    displayPiece = display;
-    initialize(renderer);
-    setVelocity(strikerVelocity);
 
 }
 

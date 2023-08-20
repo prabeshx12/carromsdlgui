@@ -6,12 +6,11 @@
 
 class CarromPiece {
 	public:
+
 		SDL_Surface* imageSurface;
 		SDL_Rect positionRect;
 		Vector<int> pieceVelocity;
 		bool displayPiece;
-
-		CarromPiece() {}
 
 		virtual void initialize();
 
@@ -29,45 +28,102 @@ class CarromPiece {
 
 class Striker :public CarromPiece {
 	public:
+
 		SDL_Texture* imageTexture;
 
-		Striker(SDL_Renderer* renderer, bool display = true);
-		Striker(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true);
+		Striker(SDL_Renderer* renderer, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity();
+
+		}
+
+		Striker(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity(strikerVelocity);
+
+		}
 
 		void initialize(SDL_Renderer* renderer);
 
 };
 
 class Queen :public CarromPiece {
-public:
-	SDL_Texture* imageTexture;
 
-	Queen(SDL_Renderer* renderer, bool display = true);
-	Queen(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true);
+	public:
 
-	void initialize(SDL_Renderer* renderer);
+		SDL_Texture* imageTexture;
+
+		Queen(SDL_Renderer* renderer, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity();
+
+		}
+
+		Queen(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity(strikerVelocity);
+
+		}
+
+		void initialize(SDL_Renderer* renderer);
 
 };
 
 class White :public CarromPiece {
-public:
-	SDL_Texture* imageTexture;
+	public:
 
-	White(SDL_Renderer* renderer, bool display = true);
-	White(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true);
+		SDL_Texture* imageTexture;
 
-	void initialize(SDL_Renderer* renderer);
+		White(SDL_Renderer* renderer, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity();
+
+		}
+
+		White(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity(strikerVelocity);
+
+		}
+
+		void initialize(SDL_Renderer* renderer);
 
 };
 
 class Black :public CarromPiece {
-public:
-	SDL_Texture* imageTexture;
+	public:
 
-	Black(SDL_Renderer* renderer, bool display = true);
-	Black(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true);
+		SDL_Texture* imageTexture;
 
-	void initialize(SDL_Renderer* renderer);
+		Black(SDL_Renderer* renderer, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity();
+
+		}
+
+		Black(SDL_Renderer* renderer, Vector<int> strikerVelocity, bool display = true) {
+
+			displayPiece = display;
+			initialize(renderer);
+			setVelocity(strikerVelocity);
+
+		}
+
+		void initialize(SDL_Renderer* renderer);
 
 };
 
