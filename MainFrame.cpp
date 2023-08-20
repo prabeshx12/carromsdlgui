@@ -26,7 +26,7 @@ void Initialization::windowInit(const char* title, int x_pos, int y_pos, int p_w
 			std::cout << "Could not initialize the TTF!! Error: " << TTF_GetError() << std::endl;
 		}
 
-		fontType = TTF_OpenFont("fonts/Roboto-Black.ttf", 12);
+		fontType = TTF_OpenFont("fonts/Roboto-Black.ttf", 200);
 
 		if (fontType != nullptr) {
 			std::cout << "Font is initialized!!" << std::endl;

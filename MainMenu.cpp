@@ -147,9 +147,8 @@ void MainMenu::handleMainMenuEvents(SDL_Event e) {
                     ClickSound->PlayClickMusic();
                     currState = ABOUT;
                     SDL_RenderClear(MainWindow->renderer);
-                    AboutWindow.render_about_window();
-                    AboutWindow.render_message();
-                    AboutWindow.render_close_button();
+                    AboutWindow.reset_button_states();
+                    AboutWindow.render_about_all();
                 }
 
                 else if (x >= 770 + offsetX && x <= (770 + 200 + offsetX) && y >= 575 + offsetY && y <= (575 + BUT_HEIGHT + offsetY)) {

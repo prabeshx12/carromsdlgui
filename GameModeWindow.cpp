@@ -4,11 +4,14 @@
 #include "headers/MainMenu.h"
 #include "headers/music.h"
 #include "headers/OverLANModes.h"
+#include "headers/PlayerIntro.h"
 
 extern Initialization* MainWindow;
 extern MainMenu MenuWindow;
 extern Music* ClickSound;
 extern OverLANModes LANModeWindow;
+extern AboutSection AboutWindow;
+extern PlayerIntro IntroWindow;
 
 void NewGameModes::render_singleplayer_button() {
 
@@ -102,6 +105,12 @@ void NewGameModes::handleNewGameModeEvents(SDL_Event e) {
                 if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 200 + offsetY && y <= (200 + BUT_HEIGHT + offsetY)) {
                     render_singleplayer_button();
                     ClickSound->PlayClickMusic();
+                    currState = SINGLEPLAYERINTRO;
+                    SDL_RenderClear(MainWindow->renderer);
+                    AboutWindow.render_about_window();
+                    IntroWindow.reset_button_states();
+                    IntroWindow.render_intro_all();
+                    
                 }
 
                 else if (x >= 720 + offsetX && x <= (720 + BUT_WIDTH + offsetX) && y >= 325 + offsetY && y <= (325 + BUT_HEIGHT + offsetY)) {

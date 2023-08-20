@@ -27,7 +27,11 @@
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="music.cpp" />
     <ClCompile Include="OverLANModes.cpp" />
+    <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="PlayerIntro.cpp" />
+    <ClCompile Include="SinglePlayerGame.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\AboutWindow.h" />
@@ -37,7 +41,11 @@
     <ClInclude Include="headers\MainMenu.h" />
     <ClInclude Include="headers\music.h" />
     <ClInclude Include="headers\OverLANModes.h" />
+    <ClInclude Include="headers\Piece.h" />
+    <ClInclude Include="headers\PlayerIntro.h" />
+    <ClInclude Include="headers\SinglePlayerGame.h" />
     <ClInclude Include="headers\TextureManager.h" />
+    <ClInclude Include="headers\Vector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
