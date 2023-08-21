@@ -8,6 +8,9 @@
 #include "headers/OverLANModes.h"
 #include "headers/PlayerIntro.h"
 #include "headers/SinglePlayerGame.h"
+#include "headers/Vector.h"
+#include "headers/Piece.h"
+#include "headers/score.h"
 
 Initialization* MainWindow = nullptr;
 MainMenu MenuWindow;
@@ -18,6 +21,7 @@ Music* ClickSound;
 OverLANModes LANModeWindow;
 PlayerIntro IntroWindow;
 SinglePlayerGame SinglePlayerGameWindow;
+PlayerInfo Info;
 
 windowStates currState;
 

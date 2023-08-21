@@ -5,11 +5,13 @@
 #include "headers/music.h"
 #include "headers/fonts.h"
 #include "headers/SinglePlayerGame.h"
+#include "headers/score.h"
 
 extern Initialization* MainWindow;
 extern MainMenu MenuWindow;
 extern Music* ClickSound;
 extern SinglePlayerGame SinglePlayerGameWindow;
+extern PlayerInfo Info;
 
 
 void PlayerIntro::render_message() {
@@ -64,10 +66,14 @@ void PlayerIntro::handlePlayerIntroEvents(SDL_Event e) {
 				ClickSound->PlayClickMusic();
 				render_message_box();
 				std::cout <<"Player 1: " <<textInput << std::endl;
+
 				SDL_Delay(2000);
 				currState = SINGLEPLAYERGAME;
 				SDL_RenderClear(MainWindow->renderer);
 				SinglePlayerGameWindow.render_singleplayer_window();
+				Info.displayPlayerName(textInput);
+				SinglePlayerGameWindow.reset_button_states();
+				SinglePlayerGameWindow.render_back_button();
 				ClickSound->PauseBackgroundMusic();
 
 			}

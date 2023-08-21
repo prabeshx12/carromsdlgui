@@ -5,7 +5,6 @@
 #include <iostream>
 #include "MainMenu.h"
 
-
 class PlayerIntro {
 private:
 	SDL_Texture* message_texture, * message_box_texture, * done_texture;
@@ -13,11 +12,10 @@ private:
 	bool done_button_state = true;
 	int offsetX = 150;
 	int offsetY = 50;
-	std::string textInput;
 
 public:
 
-
+	std::string textInput;
 	SDL_Rect r11{ 260 + offsetX, 170 + offsetY, 400, 100 }, r12{ 300 + offsetX, 350 + offsetY, 300, 50};
 	SDL_Rect r13{ 350 + offsetX, 550 + offsetY, 200, BUT_HEIGHT };
 
