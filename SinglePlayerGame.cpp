@@ -68,6 +68,7 @@ void SinglePlayerGame::handleSinglePlayerGameEvents(SDL_Event e) {
 			SDL_GetMouseState(&x, &y);
 			if (e.button.button == SDL_BUTTON_LEFT) {
 
+				// back button events
 				if (x >= 960 && x <= 960 + 200 && y >= 750 && y <= 750 + BUT_HEIGHT) {
 					render_back_button();
 					ClickSound->PlayClickMusic();
@@ -79,7 +80,6 @@ void SinglePlayerGame::handleSinglePlayerGameEvents(SDL_Event e) {
 					MenuWindow.carrom_menu_background();
 					ModeWindow.reset_mode_buttons_states();
 					ModeWindow.render_mode_buttons();
-
 
 				}
 
