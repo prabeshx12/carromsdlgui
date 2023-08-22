@@ -48,16 +48,13 @@
     <ClCompile Include="SinglePlayerGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Piece.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="score.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MultiplayerModes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,16 +89,13 @@
     <ClInclude Include="headers\SinglePlayerGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="headers\Piece.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="headers\score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\MultiplayerModes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
