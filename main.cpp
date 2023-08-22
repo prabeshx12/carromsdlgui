@@ -11,6 +11,7 @@
 #include "headers/Vector.h"
 #include "headers/Piece.h"
 #include "headers/score.h"
+#include "headers/MultiplayerModes.h"
 
 Initialization* MainWindow = nullptr;
 MainMenu MenuWindow;
@@ -22,6 +23,8 @@ OverLANModes LANModeWindow;
 PlayerIntro IntroWindow;
 SinglePlayerGame SinglePlayerGameWindow;
 PlayerInfo Info;
+MultiPlayerModes MultiPlayerModeWindow;
+
 
 windowStates currState;
 
@@ -70,7 +73,8 @@ int main(int argc, char* argv[]) {
 					SinglePlayerGameWindow.handleSinglePlayerGameEvents(event);
 					break;
 
-				case MULTIPLAYERGAME:
+				case MULTIPLAYERGAMEMODES:
+					MultiPlayerModeWindow.handleMultiPlayerModesEvents(event);
 					break;
 
 				case OVERLANMODES:

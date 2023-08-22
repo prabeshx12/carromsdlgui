@@ -25,6 +25,7 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="MultiplayerModes.cpp" />
     <ClCompile Include="music.cpp" />
     <ClCompile Include="OverLANModes.cpp" />
     <ClCompile Include="Piece.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="headers\GameModeWindow.h" />
     <ClInclude Include="headers\MainFrame.h" />
     <ClInclude Include="headers\MainMenu.h" />
+    <ClInclude Include="headers\MultiplayerModes.h" />
     <ClInclude Include="headers\music.h" />
     <ClInclude Include="headers\OverLANModes.h" />
     <ClInclude Include="headers\Piece.h" />
