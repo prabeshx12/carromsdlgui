@@ -8,8 +8,6 @@
 #include "headers/OverLANModes.h"
 #include "headers/PlayerIntro.h"
 #include "headers/SinglePlayerGame.h"
-#include "headers/Vector.h"
-#include "headers/Piece.h"
 #include "headers/score.h"
 #include "headers/MultiplayerModes.h"
 
