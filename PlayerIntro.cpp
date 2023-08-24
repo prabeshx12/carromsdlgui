@@ -28,7 +28,7 @@ void PlayerIntro::render_message_box() {
 	AboutWindow.render_about_window();
 	reset_button_states();
 	render_intro_all();
-	FontManager::LFont(MainWindow->renderer, message_box_surface, message_box_texture, MainWindow->fontType, textInput.c_str(), { 255, 255, 255 }, &r12);
+	FontManager::LFont(MainWindow->renderer, message_box_surface, message_box_texture, MainWindow->fontType, textInputOne.c_str(), { 255, 255, 255 }, &r12);
 
 }
 
@@ -70,15 +70,18 @@ void PlayerIntro::handlePlayerIntroEvents(SDL_Event e) {
 			if (x >= 370 + offsetX && x <= 370 + 200 + offsetX && y >= 550 + offsetY && y <= 550 + offsetY + BUT_HEIGHT) {
 				render_done_button();
 				ClickSound->PlayClickMusic();
-				std::cout <<"Player 1: " <<textInput << std::endl;
+				std::cout <<"Player One :  " <<textInputOne << std::endl;
 
 				SDL_Delay(2000);
 				currState = SINGLEPLAYERGAME;
 				SDL_RenderClear(MainWindow->renderer);
 				SinglePlayerGameWindow.render_singleplayer_window();
-				Info.displayPlayerName(textInput);
 				SinglePlayerGameWindow.reset_button_states();
 				SinglePlayerGameWindow.render_back_button();
+				Info.displayPlayerName();
+				Info.displayScoreName();
+				Info.displayPlayerOneName(textInputOne);
+				
 				ClickSound->PauseBackgroundMusic();
 
 
@@ -91,8 +94,8 @@ void PlayerIntro::handlePlayerIntroEvents(SDL_Event e) {
 					typing = false;
 				}
 
-				else if (e.key.keysym.sym == SDLK_BACKSPACE && textInput.length() > 0) {
-					textInput.pop_back();
+				else if (e.key.keysym.sym == SDLK_BACKSPACE && textInputOne.length() > 0) {
+					textInputOne.pop_back();
 					render_message_box();
 				}
 			}
@@ -102,7 +105,7 @@ void PlayerIntro::handlePlayerIntroEvents(SDL_Event e) {
 			if (typing)
 			{
 				SDL_StartTextInput();
-				textInput += e.text.text;
+				textInputOne += e.text.text;
 				render_message_box();
 			}
 			break;

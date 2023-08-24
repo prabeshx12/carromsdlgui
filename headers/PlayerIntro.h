@@ -16,7 +16,11 @@ private:
 
 public:
 
-	std::string textInput;
+	std::string textInputOne;
+	std::string textInputTwo;
+	std::string textInputThree;
+	std::string textInputFour;
+
 	SDL_Rect r11{ 260 + offsetX, 170 + offsetY, 400, 100 }, r12{ 300 + offsetX, 350 + offsetY, 300, 50};
 	SDL_Rect r13{ 350 + offsetX, 550 + offsetY, 200, BUT_HEIGHT };
 

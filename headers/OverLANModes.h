@@ -4,6 +4,7 @@
 #include <SDL_mixer.h>
 #include "MainMenu.h"
 #include "AboutWindow.h"
+#include "MainFrame.h"
 
 class OverLANModes {
 
@@ -13,8 +14,8 @@ class OverLANModes {
 		bool join_button_state = true;
 		bool back_button_state = true;
 
-		SDL_Texture* join_texture, * host_texture, * back_texture;
-		SDL_Surface* join_surface, * host_surface, * back_surface;
+		SDL_Texture* join_texture, * host_texture, * back_texture, *coming_texture;
+		SDL_Surface* join_surface, * host_surface, * back_surface, *coming_surface;
 		int offsetX = 100;
 		int offsetY = 0;
 
@@ -22,6 +23,8 @@ class OverLANModes {
 
 		SDL_Rect r8{ 820 + offsetX, 350 + offsetY, 200, BUT_HEIGHT }, r9{820 + offsetX, 475+offsetY, 200, BUT_HEIGHT};
 		SDL_Rect r10{ 820 + offsetX, 600 + offsetY, 200, BUT_HEIGHT };
+
+		SDL_Rect fontrenderrect{WIN_WIDTH/2-200, WIN_HEIGHT/2-150, 400, 200};
 
 		void render_host_button();
 
@@ -34,5 +37,7 @@ class OverLANModes {
 		void reset_overlanmodes_button_state();
 
 		void handleOverLANModesEvents(SDL_Event e);
+
+		void coming_soon_window();
 
 };

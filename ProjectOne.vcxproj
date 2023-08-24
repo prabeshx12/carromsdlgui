@@ -30,7 +30,6 @@
     <ClCompile Include="music.cpp" />
     <ClCompile Include="OverLANModes.cpp" />
     <ClCompile Include="PlayerIntro.cpp" />
-    <ClCompile Include="score.cpp" />
     <ClCompile Include="SinglePlayerGame.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
@@ -45,7 +44,6 @@
     <ClInclude Include="headers\music.h" />
     <ClInclude Include="headers\OverLANModes.h" />
     <ClInclude Include="headers\PlayerIntro.h" />
-    <ClInclude Include="headers\score.h" />
     <ClInclude Include="headers\SinglePlayerGame.h" />
     <ClInclude Include="headers\TextureManager.h" />
   </ItemGroup>

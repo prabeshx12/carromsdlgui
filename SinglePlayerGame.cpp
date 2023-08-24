@@ -23,14 +23,6 @@ void SinglePlayerGame::carrom_background() {
 }
 
 
-void SinglePlayerGame::render_carrom_board() {
-
-	carrom_surface = IMG_Load("assets/carrom_board.png");
-
-	TextureManager::LTexture(MainWindow->renderer, carrom_surface, carrom_texture, NULL, &r14);
-
-}
-
 void SinglePlayerGame::render_back_button() {
 
 	if (back_button_state == true) {
@@ -66,20 +58,20 @@ void SinglePlayerGame::handleSinglePlayerGameEvents(SDL_Event e) {
 			int x, y;
 			SDL_GetMouseState(&x, &y);
 
-			if (x >= 960 && x <= 960 + 200 && y >= 750 && y <= 750 + BUT_HEIGHT) {
+			if (x >= WIN_WIDTH/2-100 && x <= WIN_WIDTH/2-100 + 200 && y >= 750 && y <= 750 + BUT_HEIGHT) {
 
 				if (e.button.button == SDL_BUTTON_LEFT) {
 					render_back_button();
 					ClickSound->PlayClickMusic();
 					SDL_RenderClear(MainWindow->renderer);
-					IntroWindow.textInput = "";
+					IntroWindow.textInputOne = "";
 
-					currState = NEWGAMEMODES;
+					currState = MAINMENU;
 					SDL_RenderClear(MainWindow->renderer);
 					BackMusic->PlayBackgroundMusic(-1);
-					ModeWindow.reset_mode_buttons_states();
 					MenuWindow.carrom_menu_background();
-					ModeWindow.render_mode_buttons();
+					MenuWindow.reset_button_states();
+					MenuWindow.main_menu_window();
 
 				}
 			}
@@ -89,5 +81,50 @@ void SinglePlayerGame::handleSinglePlayerGameEvents(SDL_Event e) {
 			break;
 
 	}
+
+}
+
+
+void PlayerInfo::displayPlayerName(std::string player) {
+
+	FontManager::LFont(MainWindow->renderer, playername_surface, playername_texture, MainWindow->fontType, player, { 255, 255, 255 }, &playername);
+
+}
+
+void PlayerInfo::displayScoreName(std::string score) {
+
+	FontManager::LFont(MainWindow->renderer, score_surface, score_texture, MainWindow->fontType, score, { 255, 255, 255 }, &scorename);
+
+}
+
+
+void PlayerInfo::displayPlayerOneName(std::string playername) {
+
+	FontManager::LFont(MainWindow->renderer, player1_surface, player1_texture, MainWindow->fontType, playername, { 218, 165, 32 }, &playerOne);
+
+}
+
+void PlayerInfo::displayPlayerTwoName(std::string playername) {
+
+	FontManager::LFont(MainWindow->renderer, player2_surface, player2_texture, MainWindow->fontType, playername, { 218, 165, 32 }, &playerTwo);
+
+}
+
+void PlayerInfo::displayPlayerThreeName(std::string playername) {
+
+	FontManager::LFont(MainWindow->renderer, player3_surface, player3_texture, MainWindow->fontType, playername, { 218, 165, 32 }, &playerThree);
+
+}
+
+void PlayerInfo::displayPlayerFourName(std::string playername) {
+
+	FontManager::LFont(MainWindow->renderer, player4_surface, player4_texture, MainWindow->fontType, playername, { 218, 165, 32 }, &playerFour);
+
+}
+
+void PlayerInfo::displayPlayerScore(int playerscore = 0) {
+
+	/*std::string playersc = std::to_string(playerscore);
+	FontManager::LFont(MainWindow->renderer, score_surface, score_texture, MainWindow->fontType, playerscore, { 255, 255, 255 }, &r16);*/
 
 }

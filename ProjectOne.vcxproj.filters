@@ -48,9 +48,6 @@
     <ClCompile Include="SinglePlayerGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="score.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MultiplayerModes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -87,9 +84,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\SinglePlayerGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\MultiplayerModes.h">

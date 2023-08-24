@@ -1,13 +1,15 @@
-#include "headers/MainFrame.h"
 #include "headers/music.h"
 #include "headers/OverLANModes.h"
 #include "headers/TextureManager.h"
 #include "headers/GameModeWindow.h"
+#include "headers/fonts.h"
+#include "headers/AboutWindow.h"
 
 extern Initialization* MainWindow;
 extern Music* ClickSound;
 extern NewGameModes ModeWindow;
 extern MainMenu MenuWindow;
+extern AboutSection AboutWindow;
 
 void OverLANModes::render_host_button() {
 
@@ -72,6 +74,14 @@ void OverLANModes::reset_overlanmodes_button_state() {
 
 }
 
+void OverLANModes::coming_soon_window() {
+
+    SDL_RenderClear(MainWindow->renderer);
+    AboutWindow.render_about_window();
+    FontManager::LFont(MainWindow->renderer, coming_surface, coming_texture, MainWindow->fontType, "Coming Soon", { 218, 165, 32 }, &fontrenderrect);
+
+}
+
 void OverLANModes::handleOverLANModesEvents(SDL_Event e) {
 
     switch (e.type) {
@@ -83,12 +93,26 @@ void OverLANModes::handleOverLANModesEvents(SDL_Event e) {
                 if (x >= 820 + offsetX && x <= 820 + 200 + offsetX && y >= 350 + offsetY && y <= 350 + BUT_HEIGHT + offsetY) {
                     render_host_button();
                     ClickSound->PlayClickMusic();
+                    coming_soon_window();
+                    SDL_Delay(3000);
+                    SDL_RenderClear(MainWindow->renderer);
+                    currState = OVERLANMODES;
+                    MenuWindow.carrom_menu_background();
+                    reset_overlanmodes_button_state();
+                    render_overlanmodes_buttons();
                     
                 }
 
                 else if (x >= 820 + offsetX && x <= 820 + 200 + offsetX && y >= 475 + offsetY && y <= 475 + BUT_HEIGHT + offsetY) {
                     render_join_button();
                     ClickSound->PlayClickMusic();
+                    coming_soon_window();
+                    SDL_Delay(3000);
+                    SDL_RenderClear(MainWindow->renderer);
+                    currState = OVERLANMODES;
+                    MenuWindow.carrom_menu_background();
+                    reset_overlanmodes_button_state();
+                    render_overlanmodes_buttons();
 
                 }
 
