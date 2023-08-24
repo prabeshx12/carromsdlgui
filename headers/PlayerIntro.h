@@ -12,6 +12,7 @@ private:
 	bool done_button_state = true;
 	int offsetX = 150;
 	int offsetY = 50;
+	bool typing = true;
 
 public:
 

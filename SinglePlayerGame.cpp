@@ -55,7 +55,6 @@ void SinglePlayerGame::reset_button_states() {
 void SinglePlayerGame::render_singleplayer_window() {
 
 	carrom_background();
-	render_carrom_board();
 	render_back_button();
 
 }
@@ -66,29 +65,29 @@ void SinglePlayerGame::handleSinglePlayerGameEvents(SDL_Event e) {
 		case SDL_MOUSEBUTTONDOWN:
 			int x, y;
 			SDL_GetMouseState(&x, &y);
-			if (e.button.button == SDL_BUTTON_LEFT) {
 
-				// back button events
-				if (x >= 960 && x <= 960 + 200 && y >= 750 && y <= 750 + BUT_HEIGHT) {
+			if (x >= 960 && x <= 960 + 200 && y >= 750 && y <= 750 + BUT_HEIGHT) {
+
+				if (e.button.button == SDL_BUTTON_LEFT) {
 					render_back_button();
 					ClickSound->PlayClickMusic();
 					SDL_RenderClear(MainWindow->renderer);
 					IntroWindow.textInput = "";
 
 					currState = NEWGAMEMODES;
+					SDL_RenderClear(MainWindow->renderer);
 					BackMusic->PlayBackgroundMusic(-1);
-					MenuWindow.carrom_menu_background();
 					ModeWindow.reset_mode_buttons_states();
+					MenuWindow.carrom_menu_background();
 					ModeWindow.render_mode_buttons();
 
 				}
-
-				break;
 			}
 			break;
 
 		default:
 			break;
+
 	}
 
 }

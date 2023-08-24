@@ -20,10 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AboutWindow.cpp" />
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="CarromPiece.cpp" />
     <ClCompile Include="fonts.cpp" />
-    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameModeWindow.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="main.cpp" />
@@ -32,19 +29,14 @@
     <ClCompile Include="MultiplayerModes.cpp" />
     <ClCompile Include="music.cpp" />
     <ClCompile Include="OverLANModes.cpp" />
-    <ClCompile Include="Physics.cpp" />
     <ClCompile Include="PlayerIntro.cpp" />
     <ClCompile Include="score.cpp" />
     <ClCompile Include="SinglePlayerGame.cpp" />
     <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\AboutWindow.h" />
-    <ClInclude Include="headers\Board.h" />
-    <ClInclude Include="headers\CarromPiece.h" />
     <ClInclude Include="headers\fonts.h" />
-    <ClInclude Include="headers\GameManager.h" />
     <ClInclude Include="headers\GameModeWindow.h" />
     <ClInclude Include="headers\MainFrame.h" />
     <ClInclude Include="headers\MainMenu.h" />
@@ -52,12 +44,10 @@
     <ClInclude Include="headers\MultiplayerModes.h" />
     <ClInclude Include="headers\music.h" />
     <ClInclude Include="headers\OverLANModes.h" />
-    <ClInclude Include="headers\Physics.h" />
     <ClInclude Include="headers\PlayerIntro.h" />
     <ClInclude Include="headers\score.h" />
     <ClInclude Include="headers\SinglePlayerGame.h" />
     <ClInclude Include="headers\TextureManager.h" />
-    <ClInclude Include="headers\Vector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
