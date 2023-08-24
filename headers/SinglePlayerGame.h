@@ -7,15 +7,6 @@
 #include "MainFrame.h"
 #include "MainMenu.h"
 
-const int CARROM_PIECE_SIZE = 42;
-const int STRIKER_PIECE_SIZE = 50;
-
-const int BOARD_BORDER = 53;
-const int BORDER_LEFT = BOARD_BORDER;
-const int BORDER_RIGHT = WIN_WIDTH - 950 - BOARD_BORDER;
-const int BORDER_UP = BOARD_BORDER;
-const int BORDER_DOWN = WIN_HEIGHT - BOARD_BORDER;
-
 extern Initialization* MainWindow;
 
 

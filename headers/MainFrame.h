@@ -17,6 +17,13 @@ enum windowStates {
 };
 
 const int WIN_WIDTH = 1180, WIN_HEIGHT = 950;
+const int CARROM_PIECE_SIZE = 42;
+const int STRIKER_PIECE_SIZE = 50;
+
+const int GAME_BORDER = 53;
+const int POCKET_WIDTH = 45;
+const int pieceSize = CARROM_PIECE_SIZE;
+const int centerOffset = (WIN_HEIGHT - pieceSize) / 2;
 
 extern windowStates currState;
 
