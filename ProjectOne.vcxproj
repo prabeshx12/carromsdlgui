@@ -32,6 +32,8 @@
     <ClCompile Include="PlayerIntro.cpp" />
     <ClCompile Include="SinglePlayerGame.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TwoPlayerGame.cpp" />
+    <ClCompile Include="TwoPlayerIntro.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\AboutWindow.h" />
@@ -46,6 +48,8 @@
     <ClInclude Include="headers\PlayerIntro.h" />
     <ClInclude Include="headers\SinglePlayerGame.h" />
     <ClInclude Include="headers\TextureManager.h" />
+    <ClInclude Include="headers\TwoPlayerGame.h" />
+    <ClInclude Include="headers\TwoPlayerIntro.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

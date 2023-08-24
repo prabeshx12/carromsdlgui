@@ -3,11 +3,17 @@
 #include "headers/TextureManager.h"
 #include "headers/music.h"
 #include "headers/GameModeWindow.h"
+#include "headers/OverLANModes.h"
+#include "headers/AboutWindow.h"
+#include "headers/TwoPlayerIntro.h"
 
 extern Initialization* MainWindow;
 extern Music* ClickSound;
 extern MainMenu MenuWindow;
 extern NewGameModes ModeWindow;
+extern OverLANModes LANModeWindow;
+extern AboutSection AboutWindow;
+extern TwoPlayerIntro TwoPlayerIntroWindow;
 
 void MultiPlayerModes::render_twoplayer_button() {
 
@@ -82,11 +88,23 @@ void MultiPlayerModes::handleMultiPlayerModesEvents(SDL_Event e) {
 				if (x >= 820 + offsetX && x <= 820 + BUT_WIDTH + offsetY && y >= 350 + offsetY && y <= 350 + BUT_HEIGHT + offsetY) {
 					render_twoplayer_button();
 					ClickSound->PlayClickMusic();
+					currState = TWOPLAYERINTRO;
+					SDL_RenderClear(MainWindow->renderer);
+					AboutWindow.render_about_window();
+					TwoPlayerIntroWindow.reset_button_states();
+					TwoPlayerIntroWindow.render_intro_all();
 				}
 
 				else if (x >= 820 + offsetX && x <= 820 + BUT_WIDTH + offsetY && y >= 475 + offsetY && y <= 475 + BUT_HEIGHT + offsetY) {
 					render_fourplayer_button();
 					ClickSound->PlayClickMusic();
+					LANModeWindow.coming_soon_window();
+					SDL_Delay(3000);
+					SDL_RenderClear(MainWindow->renderer);
+					currState = MULTIPLAYERGAMEMODES;
+					MenuWindow.carrom_menu_background();
+					reset_button_states();
+					render_multiplayermode_buttons();
 				}
 				
 				else if (x >= 870 + offsetX && x <= 870 + 200 + offsetX && y >= 600 + offsetY && 600 + BUT_HEIGHT + offsetY) {

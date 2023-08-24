@@ -14,11 +14,10 @@ class SinglePlayerGame {
 
 	private:
 		bool back_button_state = true;
-		SDL_Surface* carrom_surface, * carrom_background_surface, * back_surface;
-		SDL_Texture* carrom_texture, * carrom_background_texture, * back_texture;
+		SDL_Surface* carrom_background_surface, * back_surface;
+		SDL_Texture* carrom_background_texture, * back_texture;
 
 	public:
-		SDL_Rect r14{ 0, 0, 950, 950 };
 		SDL_Rect r17{ WIN_WIDTH/2-100, 750, 200, BUT_HEIGHT };
 
 		void carrom_background();

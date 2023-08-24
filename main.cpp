@@ -9,6 +9,8 @@
 #include "headers/PlayerIntro.h"
 #include "headers/SinglePlayerGame.h"
 #include "headers/MultiplayerModes.h"
+#include "headers/TwoPlayerGame.h"
+#include "headers/TwoPlayerIntro.h"
 
 Initialization* MainWindow = nullptr;
 MainMenu MenuWindow;
@@ -21,6 +23,10 @@ PlayerIntro IntroWindow;
 SinglePlayerGame SinglePlayerGameWindow;
 PlayerInfo Info;
 MultiPlayerModes MultiPlayerModeWindow;
+TwoPlayerGame TwoPlayerGameWindow;
+TwoPlayerIntro TwoPlayerIntroWindow;
+TwoPlayerInfo TwoInfo;
+
 
 
 windowStates currState;
@@ -68,6 +74,14 @@ int main(int argc, char* argv[]) {
 
 				case SINGLEPLAYERGAME:
 					SinglePlayerGameWindow.handleSinglePlayerGameEvents(event);
+					break;
+
+				case TWOPLAYERINTRO:
+					TwoPlayerIntroWindow.handleTwoPlayerIntroEvents(event);
+					break;
+
+				case TWOPLAYERGAME:
+					TwoPlayerGameWindow.handleTwoPlayerGameEvents(event);
 					break;
 
 				case MULTIPLAYERGAMEMODES:
