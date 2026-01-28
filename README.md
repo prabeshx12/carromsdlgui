@@ -1,2 +1,3 @@
 # Carrom_SDL_Project
-Simple Carrom Game through SDL in C++
+Simple Carrom Game through SDL in C++ with various features.
+
